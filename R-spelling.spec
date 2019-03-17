@@ -4,15 +4,12 @@
 #
 Name     : R-spelling
 Version  : 2.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/spelling_2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/spelling_2.1.tar.gz
 Summary  : Tools for Spell Checking in R
 Group    : Development/Tools
 License  : MIT
-Requires: R-commonmark
-Requires: R-hunspell
-Requires: R-xml2
 BuildRequires : R-commonmark
 BuildRequires : R-hunspell
 BuildRequires : R-xml2
@@ -32,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552363984
+export SOURCE_DATE_EPOCH=1552848288
 
 %install
-export SOURCE_DATE_EPOCH=1552363984
+export SOURCE_DATE_EPOCH=1552848288
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library spelling|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  spelling || :
 
 
 %files
@@ -100,3 +96,4 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/spelling/html/00Index.html
 /usr/lib64/R/library/spelling/html/R.css
 /usr/lib64/R/library/spelling/templates/spelling.Rout.save
+/usr/lib64/R/library/spelling/tests/spelling.R
