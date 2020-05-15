@@ -4,7 +4,7 @@
 #
 Name     : R-spelling
 Version  : 2.1
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/spelling_2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/spelling_2.1.tar.gz
 Summary  : Tools for Spell Checking in R
@@ -28,21 +28,22 @@ and description files. Includes utilities to automate checking of documentation 
 
 %prep
 %setup -q -c -n spelling
+cd %{_builddir}/spelling
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569295298
+export SOURCE_DATE_EPOCH=1589586668
 
 %install
-export SOURCE_DATE_EPOCH=1569295298
+export SOURCE_DATE_EPOCH=1589586668
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
