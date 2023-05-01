@@ -5,7 +5,7 @@
 #
 Name     : R-spelling
 Version  : 2.2.1
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/spelling_2.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/spelling_2.2.1.tar.gz
 Summary  : Tools for Spell Checking in R
